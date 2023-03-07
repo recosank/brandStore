@@ -1,7 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import HomeBanner from "./components/HomeBanner";
-import { Container } from "@mui/material";
+import { Container, Divider } from "@mui/material";
 import CategorySection from "./components/CategorySection";
 import TrendingSection from "./components/TrendingSection";
 import ProductSection from "./components/ProductSection";
@@ -12,6 +12,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import home from "./images/home.png";
 import bannerTwo from "./images/bannerTwo.png";
 import bannerthree from "./images/bannerthree.png";
+import Footer from "./components/Footer";
 
 function App() {
   const matchesXL = useMediaQuery("(min-width:1500px)");
@@ -87,6 +88,8 @@ function App() {
       </Container>
       <HelpSection />
       <SubscriptionSection />
+      <Divider sx={{ marginTop: "2%" }} />
+      <Footer />
     </div>
   );
 }
