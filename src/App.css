@@ -1,38 +1,93 @@
-.App {
+.fancy {
+  line-height: 0.5;
   text-align: center;
+  font-weight: 600;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fancy span {
+  display: inline-block;
+  position: relative;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fancy span:before,
+.fancy span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid #ffc7d1;
+  top: 0;
+  width: 30%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.fancy span:before {
+  right: 60%;
+  margin-right: 15px;
+}
+.fancy span:after {
+  left: 60%;
+  margin-left: 15px;
+}
+.subInput::placeholder {
   color: white;
+  opacity: 1;
+  font-size: 17px;
+}
+.blurImg:hover {
+  transform: scale(0.9);
+}
+.button {
+  display: block;
+  position: relative;
+  border: none;
+}
+.button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+}
+.button:hover:after {
+  width: 120%;
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.button:hover {
+  animation: button 0.75s infinite;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.prodCard:hover {
+  animation: rotate 1s linear;
+}
+@keyframes button {
+  0% {
+    transform: scale(1, 1) translate(0px, 0px);
   }
-  to {
-    transform: rotate(360deg);
+
+  30% {
+    transform: scale(1, 0.8) translate(0px, 10px);
+  }
+
+  75% {
+    transform: scale(1, 1.1) translate(0px, -25px);
+  }
+
+  100% {
+    transform: scale(1, 1) translate(0px, 0px);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
   }
 }
